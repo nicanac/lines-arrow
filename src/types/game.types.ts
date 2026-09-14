@@ -1,14 +1,14 @@
-export type Direction = 'N' | 'E' | 'S' | 'W' | 'NE' | 'NW' | 'SE' | 'SW';
+export type Direction = 'N' | 'E' | 'S' | 'W';
 
 export interface GridCoord {
-  x: number; // Column index (0 to cols - 1)
-  y: number; // Row index (0 to rows - 1)
+  x: number;
+  y: number;
 }
 
-export interface ArrowNodeData {
+export interface ArrowLineData {
   id: string;
-  coord: GridCoord;
-  direction: Direction;
+  points: GridCoord[];      // Points ordered from tail (index 0) to head (index points.length - 1)
+  headDirection: Direction; // Direction the head points and travels
   isRemoved: boolean;
   color?: number;
 }
@@ -17,7 +17,7 @@ export interface LevelSchema {
   id: number;
   cols: number;
   rows: number;
-  arrows: ArrowNodeData[];
+  lines: ArrowLineData[];
 }
 
 export enum GameState {
