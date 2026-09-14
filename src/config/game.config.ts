@@ -4,16 +4,15 @@ export const GameConfig = {
     max: 3,
   },
   grid: {
-    baseCellSize: 32,
-    minCellSize: 22,
-    maxCellSize: 44,
-    lineWidthRatio: 0.18, // Line stroke thickness relative to cell size (~5-6px)
-    arrowHeadSize: 9,
-    chevronSize: 4.5,
+    baseCellSize: 44,
+    minCellSize: 26,
+    maxCellSize: 68,
+    lineWidthRatio: 0.16, // Proportional stroke thickness (~6-9px)
+    arrowHeadSize: 11,
   },
   animation: {
-    exitDuration: 0.4,
-    exitDistance: 1200,
+    exitDuration: 0.55,
+    exitDistance: 1600,
     bumpDuration: 0.08,
     bumpReturnDuration: 0.16,
     bumpDistance: 8,

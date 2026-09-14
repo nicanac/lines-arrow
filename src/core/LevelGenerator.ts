@@ -103,12 +103,12 @@ export class LevelGenerator {
 
     // First backward step must be opposite to forward exit direction
     const firstBackDir = this.OPPOSITE[forwardDir];
-    const numTurns = Math.floor(Math.random() * 3); // 0 to 2 turns
+    const numTurns = Math.floor(Math.random() * 3) + 1; // 1 to 3 turns
     let currentDir = firstBackDir;
     let curr = { ...head };
 
-    // Initial backward segment: 1 to 3 units
-    const firstSegmentLen = Math.floor(Math.random() * 3) + 1;
+    // Initial backward segment: 2 to 4 units
+    const firstSegmentLen = Math.floor(Math.random() * 3) + 2;
     if (!this.stepSegment(curr, currentDir, firstSegmentLen, cols, rows, occupied, tempOccupied, pointsFromHead)) {
       return null;
     }
@@ -120,7 +120,7 @@ export class LevelGenerator {
       let turned = false;
 
       for (const nextDir of turnDirs) {
-        const segLen = Math.floor(Math.random() * 3) + 1;
+        const segLen = Math.floor(Math.random() * 3) + 2;
         if (this.stepSegment(curr, nextDir, segLen, cols, rows, occupied, tempOccupied, pointsFromHead)) {
           curr = pointsFromHead[pointsFromHead.length - 1];
           currentDir = nextDir;
